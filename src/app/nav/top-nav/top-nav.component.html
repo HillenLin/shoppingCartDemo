@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4"><img src="./assets/images/logo.png"></div>
+    <div class="col-4">
+      <nav class="header-nav-wrapper">
+        <!-- Hard code here for the purpose of displaying demo -->
+        <ul>
+            <li *ngFor="let item of MENULIST" [routerLink]="item.menuRouter">{{item.menuName}}</li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-4">
+        <app-my-cart></app-my-cart>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 banner-wrapper">
+      <img src="./assets/images/plates-header.jpg">
+    </div>
+  </div>
+</div>
