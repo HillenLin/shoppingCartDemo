@@ -1,3 +1,5 @@
+@import "../../../variables.scss";
+
 nav{
     display: table;
     position: absolute;
@@ -17,5 +19,14 @@ li{
 }
 li:not(:first-child){
     padding-left: 30px;
+}
+
+#top-nav-wrapper{
+    border-bottom: 1px solid $clr-border;
+}
+
+#top-nav-wrapper>div{
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 

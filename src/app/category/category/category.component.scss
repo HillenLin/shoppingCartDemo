@@ -3,6 +3,11 @@
 .container-fluid{
     margin-top:30px;
 }
+a{
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
 
 article{
     padding-top: 15px;
@@ -22,6 +27,9 @@ article{
         padding-bottom: 5px;
     }
 }
+a:first-child{
+    margin-bottom: 5px;
+}
 
 .hover-wrapper{
     position: relative;
@@ -31,7 +39,6 @@ article{
         border-color: $clr-main;
         color: $clr-white;
         display: block;
-        margin-bottom: 15px;
         padding: 10px;
         &:hover{
             background: $clr-main-hover; 

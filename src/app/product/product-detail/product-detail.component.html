@@ -6,10 +6,18 @@
       <div class="col-md-4">
         <p>{{product.brand}}</p>
         <h1>{{product.title}}</h1>
-        <p>{{product.price}}</p>
-        <p>{{product.description}}</p>
-        <input type="number" [(ngModel)]="inputQty">
-        <button (click)=addItemToShoppingCart()>ADD TO CART</button>
+        <p>{{product.price | currency}}</p>
+        <p class="description-wrapper">{{product.description}}</p>
+        <div>
+          <div class="quantity-control-outter-wrapper">
+            <input type="number" [(ngModel)]="inputQty">
+            <div class="quantity-control-wrapper">
+              <span class="increment-button" (click)="increaQuantity()">+</span>
+              <span class="decrement-button" (click)="decreaseQuantity()">-</span>
+            </div>
+          </div>
+          <button class="mainButtonStyle" (click)=addItemToShoppingCart()>ADD TO CART</button>
+        </div>
       </div>
   </div>
 </div>

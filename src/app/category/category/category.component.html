@@ -16,13 +16,13 @@
             <img [src]="product.image">
             <div class="hover-items">
               <a [routerLink]="['product/', product.id]">View Details</a>
-              <a >Add To Cart</a>
+              <a [routerLink]="['product/', product.id]">Add To Cart</a>
             </div>
         </div>
 
         <p class="light-text">{{product.brand}}</p>
         <p>{{product.title}}</p>
-        <p class="light-text">{{product.price}}</p>
+        <p class="light-text">{{product.price | currency}}</p>
       </article>
       <!--  -->
     </ng-container>

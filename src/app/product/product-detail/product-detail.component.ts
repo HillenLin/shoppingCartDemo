@@ -16,8 +16,9 @@ export class ProductDetailComponent implements OnInit {
   id: number;
   httpGetEndPointService$: Subscription;
   product: ProductsModel;
-  inputQty: number;
+  inputQty: number = 1;
   cartProduct: CartResponse;
+  
   constructor(
     private activeRouter: ActivatedRoute,
     private httpService: HttpService,
@@ -51,14 +52,26 @@ export class ProductDetailComponent implements OnInit {
     this.httpGetEndPointService$.unsubscribe();
   }
 
+  increaQuantity(){
+    this.inputQty ++;
+  }
+
+  decreaseQuantity(){
+    if(this.inputQty === 1){
+      return;
+    }
+    this.inputQty --;
+  }
+
   addItemToShoppingCart(){
     console.log(this.id);
     console.log(this.inputQty);
     this.cartProduct = {
-      productId: this.id,
-      quantity: this.inputQty
+      productId: this.id,//use index of JSON object as a id value. 
+      quantity: Number(this.inputQty)
     }
     this.shoppingCartService.monitorShoppingCart(this.cartProduct);
+    //Showing Popup message. 
   }
 
 }

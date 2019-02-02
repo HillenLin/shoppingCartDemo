@@ -2,12 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MyCartDetailsComponent } from './my-cart-details/my-cart-details.component';
 import { ShoppingCartRoutingModule } from './shopping-cart-routing.module';
-// import { MyCartComponent } from './my-cart/my-cart.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductModule } from '../product/product.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    ShoppingCartRoutingModule
+    ShoppingCartRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ProductModule
   ],
   declarations: [MyCartDetailsComponent],
   // declarations: [MyCartComponent]

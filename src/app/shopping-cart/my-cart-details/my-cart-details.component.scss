@@ -1,0 +1,121 @@
+@import "../../../variables.scss";
+
+$top-nav-height: 99px;
+
+
+h1{
+    padding-top: 35px;
+    padding-bottom: 35px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    text-transform: capitalize;
+    color: $clr-main;
+}
+.main-wrapper{
+    min-height: calc( 100% - #{$top-nav-height});
+    background: $Clr-main-bg;
+    color: $clr-light;
+}
+.shopping-info-wrapper{
+    max-width: 950px;
+    background: $clr-white;
+    padding: 70px 35px;
+    text-align: center;
+    margin: auto;
+    text-align: left;
+}
+.col-sm-2{
+    text-align: right;
+}
+.col-md-12{
+    padding-left: 0px;
+    padding-right: 0px;
+    border-bottom: 1px solid $clr-border;
+    margin-bottom: 35px;
+    padding-bottom: 35px;
+}
+.small-product-img{
+    width: 100%;
+}
+.table-title{
+    padding-bottom: 15px;
+    border-bottom: 1px solid $clr-border;
+    margin-bottom: 35px;
+    padding-bottom: 35px;
+}
+.addition-info:first-child{
+    margin-bottom: 0px
+}
+.addition-info:first-child{
+    margin-bottom: 0px;
+    color: $clr-main;
+}
+a.addition-info{
+    color: $clr-main;
+}
+input{
+    background: $Clr-main-bg;
+    outline: none;
+    border: none;
+    text-align: center;
+    width: 50px;
+    margin-right: 5px;
+    float: left;
+    height: 55px;
+}
+.quantity-control-outter-wrapper{
+    float:right;
+}
+.quantity-control-wrapper{
+    width: 30px;
+    float: left;
+}
+.increment-button{
+    display: block;
+    background: $clr-btn-bg;
+    text-align: center;
+    height: 25px;
+    font-size: 25px;
+    line-height: 25px;
+    cursor: pointer;
+    &:hover{
+        background: $clr-main-hover;
+        color:$clr-white;
+    }
+}
+.decrement-button{
+    display: block;
+    background: $clr-btn-bg;
+    text-align: center;
+    height: 25px;
+    margin-top: 5px;
+    font-size: 25px;
+    line-height: 25px;
+    cursor: pointer;
+    &:hover{
+        background:$clr-main-hover;
+        color:$clr-white;
+    }
+}
+.deleteBtn{
+    font-size: $fs-h1;
+    cursor: pointer;
+    color: $clr-light;
+    &:hover{
+        color:$clr-main-hover;
+    }
+}
+.empty-cart{
+    text-align: center;
+}
+.checkoutBtn{
+    text-align: right;
+}
+.special-link{
+    text-decoration: underline;
+    outline: none;
+    color:$clr-main;
+    &:hover{
+        color:$clr-main-hover;
+    }
+}

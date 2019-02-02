@@ -1,4 +1,7 @@
-p{
+@import "../../../variables.scss";
+
+a{
+    color: $clr-main;
     text-align: right;
     margin: auto;
     position: absolute;

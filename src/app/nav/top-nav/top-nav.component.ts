@@ -10,13 +10,13 @@ export class TopNavComponent implements OnInit {
 
   MENULIST: IMenu[] = [
     {
-      menuName: 'home',
-      menuRouter: '/home',
+      menuName: 'category',
+      menuRouter: '/category',
     },
-    {
-      menuName: 'Shopping Cart',
-      menuRouter: '/shopping-cart',
-    },
+    // {
+    //   menuName: 'Shopping Cart',
+    //   menuRouter: '/shopping-cart',
+    // },
   ]
 
   constructor() { }

@@ -1,13 +1,71 @@
 
-<div *ngIf="!activeShoppingCart?.length">
-  <p>Your shopping cart is empty. Please 
-    <a [routerLink]="['/home']">clik here</a> to continue shopping
-  </p>
+<div *ngIf="!activeShoppingCart?.length" class="main-wrapper container-fluid">
+  <h1>{{title}}</h1>
+  <div class="shopping-info-wrapper empty-cart">
+      <p>Your shopping cart is empty. Please 
+        <a [routerLink]="['/category']">clik here</a> to continue shopping
+      </p>
+  </div>
 </div>
 
-<div *ngIf="activeShoppingCart?.length && endPoint?.length">
-  <ng-container *ngFor="let item of activeShoppingCart; let i = index">
-    <p>{{endPoint[item.productId]?.image}}</p>
-    <p>{{item?.quantity}}</p>
-  </ng-container>
+<div *ngIf="activeShoppingCart?.length && endPoint?.length" class="main-wrapper container-fluid">
+  <h1>{{title}}</h1>
+  
+  <div class="shopping-info-wrapper row">
+    <div class="col-md-12 table-title">
+      <div class="row">
+        <div class="col-sm-6">PRODUCT</div>
+        <div class="col-sm-2">QUANTITY</div>
+        <div class="col-sm-2">TOTAL</div>
+        <div class="col-sm-2">ACTION</div>
+      </div>
+    </div>
+    <ng-container *ngFor="let item of activeShoppingCart; let i = index">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-5">
+                <img class="small-product-img" [src]="endPoint[item.productId]?.image">
+              </div>
+              <div class="col-7">
+                <p class="addition-info">{{endPoint[item.productId]?.brand}}</p>
+                <a class="addition-info" [routerLink]="['product/', item.productId]">{{endPoint[item.productId]?.title}}</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="quantity-control-outter-wrapper">
+              <input type="number" [value]="item.quantity"  (change)="updateShoppingCart(item.productId, $event)">
+              <div class="quantity-control-wrapper">
+                <span class="increment-button" (click)="increaseQuantity(item.productId)">+</span>
+                <span class="decrement-button" (click)="decreaseQuantity(item.productId)">-</span>
+              </div>
+            </div>
+          </div>
+          <!-- Total Price -->
+          <div class="col-sm-2">
+            {{endPoint[item.productId]?.price * item.quantity |  currency}}
+          </div>
+          <!-- Remove button -->
+          <div class="col-sm-2">
+            <span class="deleteBtn" (click)="deleteItem(item.productId, item.quantity)">X</span>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6 ">
+            <a class="special-link" [routerLink]="['/category']">CONTINUE SHOPPING</a>
+          </div>
+          <div class="col-md-6 checkoutBtn">
+            <button class="mainButtonStyle">CHECKOUT ({{totalPrice | currency}})</button>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <h1></h1>
+
 </div>

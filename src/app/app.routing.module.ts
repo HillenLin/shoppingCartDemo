@@ -12,10 +12,6 @@ const appRoutes: Routes = [
     loadChildren: './shopping-cart/shopping-cart.module#ShoppingCartModule'
   },
   {
-    path: 'home',
-    redirectTo: '/category',
-  },
-  {
     path: '',
     redirectTo: '/category',
     pathMatch: 'full'  
