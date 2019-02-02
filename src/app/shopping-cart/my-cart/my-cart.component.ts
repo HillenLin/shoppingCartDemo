@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
 import { CartResponse } from 'src/app/models/shopping-cart';
+import { HttpService } from '../../services/http/http.service';
+import { ProductsModel } from '../../models/products';
 
 @Component({
   selector: 'app-my-cart',
@@ -8,28 +10,14 @@ import { CartResponse } from 'src/app/models/shopping-cart';
   styleUrls: ['./my-cart.component.scss']
 })
 export class MyCartComponent implements OnInit {
-activeShoppingCart: CartResponse[] = [];
+  activeShoppingCart: CartResponse[] = [];
+  endPoint: ProductsModel[];
   constructor(
-    private shoppingCartService: ShoppingCartService
+    private shoppingCartService: ShoppingCartService,
   ) { }
 
   ngOnInit() {
-
-    
-
-    this.shoppingCartService.currentShoppingCarts.subscribe((res: CartResponse) => {
-      console.info(res);
-      if(res && !this.activeShoppingCart.filter(cart => cart.productId == res.productId).length){
-        this.activeShoppingCart.push(res);
-      }else{
-        this.activeShoppingCart.forEach(element => {
-          if(element.productId == res.productId){
-            element.quantity += res.quantity;
-          }
-        });
-      }
-      console.log(this.activeShoppingCart);
-    });
+    this.activeShoppingCart = this.shoppingCartService.getShoppingCart();
   }
 
 }

@@ -1,0 +1,13 @@
+
+<div *ngIf="!activeShoppingCart?.length">
+  <p>Your shopping cart is empty. Please 
+    <a [routerLink]="['/home']">clik here</a> to continue shopping
+  </p>
+</div>
+
+<div *ngIf="activeShoppingCart?.length && endPoint?.length">
+  <ng-container *ngFor="let item of activeShoppingCart; let i = index">
+    <p>{{endPoint[item.productId]?.image}}</p>
+    <p>{{item?.quantity}}</p>
+  </ng-container>
+</div>

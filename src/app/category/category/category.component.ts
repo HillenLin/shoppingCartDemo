@@ -21,7 +21,6 @@ export class CategoryComponent implements OnInit {
   ngOnInit():void {
     //receiving the endpoint data returned from API(Local JSON file)
     this.httpGetEndPointService$ = this.httpService.GetJSON().subscribe((res:ProductsModel[]) =>{
-      console.log(res);
       this.endPoint = res;
 
       for(let i = 0; i < this.endPoint.length; i ++){
@@ -36,7 +35,6 @@ export class CategoryComponent implements OnInit {
     (error: any) => { console.error(error) },
     () =>{
       //codes should be executed after the completion of the API call
-      console.log(this.endPoint);
     });
 
   }
