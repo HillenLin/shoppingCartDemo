@@ -11,7 +11,7 @@ import { ProductModule } from '../product/product.module';
     ShoppingCartRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    ProductModule
+    ProductModule,
   ],
   declarations: [MyCartDetailsComponent],
   // declarations: [MyCartComponent]

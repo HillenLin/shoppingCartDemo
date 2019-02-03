@@ -24,7 +24,7 @@ h1{
     margin: auto;
     text-align: left;
 }
-.col-sm-2{
+.col-md-2{
     text-align: right;
 }
 .col-md-12{
@@ -44,11 +44,8 @@ h1{
     padding-bottom: 35px;
 }
 .addition-info:first-child{
-    margin-bottom: 0px
-}
-.addition-info:first-child{
     margin-bottom: 0px;
-    color: $clr-main;
+    color: $clr-light;
 }
 a.addition-info{
     color: $clr-main;
@@ -117,5 +114,35 @@ input{
     color:$clr-main;
     &:hover{
         color:$clr-main-hover;
+    }
+}
+
+@media only screen and (max-width : 767px) {
+    .mobile-hide{
+        display: none;
+    }
+    .shopping-info-wrapper{
+        padding: 35px;
+    }
+    .col-sm-4{
+        text-align:left;
+        margin-top: 35px;
+    }
+    .quantity-control-outter-wrapper{
+        float:left;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    .col-sm-4{
+        text-align:left;
+        margin-top: 5px;
+        margin: auto;
+    }
+    .mobile-fix .col-md-6{
+        text-align:center;
+    }
+    .col-md-6.col-sm-12{
+        padding-bottom: 15px;
     }
 }

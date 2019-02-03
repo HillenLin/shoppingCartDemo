@@ -30,3 +30,11 @@ li:not(:first-child){
     margin-bottom: 15px;
 }
 
+.trave-back{
+    cursor: pointer;
+    display: inline;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+

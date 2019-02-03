@@ -11,17 +11,18 @@
   <div class="row" >
     <ng-container *ngFor="let product of endPoint; let i = index">
       <!--  -->
-      <article class="product-item col-md-4">
+      <article [routerLink]="['product/', product.id]" class="product-item col-md-4">
         <div class="hover-wrapper">
             <img [src]="product.image">
             <div class="hover-items">
+              <!-- todo-fix unclear UX: Current logic - direct the below two button to the same component -->
               <a [routerLink]="['product/', product.id]">View Details</a>
               <a [routerLink]="['product/', product.id]">Add To Cart</a>
             </div>
         </div>
 
         <p class="light-text">{{product.brand}}</p>
-        <p>{{product.title}}</p>
+        <p class="trave-back" [routerLink]="['product/', product.id]">{{product.title}}</p>
         <p class="light-text">{{product.price | currency}}</p>
       </article>
       <!--  -->

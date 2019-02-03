@@ -10,4 +10,104 @@ a{
     transform: translate(0%, -50%);
     font-weight: 500;
     text-transform: uppercase;
+    cursor: pointer;
+}
+
+.popupCart{
+    position: absolute;
+    float: right;
+    top: 85px;
+    background: white;
+    z-index: 10;
+    right: 0;
+    border-left: 1px solid $clr-border;
+    border-bottom: 1px solid $clr-border;
+    box-shadow: 0 2px 3px rgba(128,128,128,.25);
+}
+.popupCart-wrapper{
+    width: 320px;
+}
+.popCart-info-wrapper{
+    width: 210px;
+    padding: 15px 15px 0px 15px;
+    display: inline-block;
+}
+img{
+    width: 110px;
+    padding: 15px;
+    vertical-align: top;
+    display: inline-block;
+}
+.btn-wrapper{
+    clear: both;
+    padding-bottom: 15px;
+    margin-top: 15px;
+    border-top: 1px solid $clr-border;
+}
+p{
+    margin-bottom: 0px;
+    &:first-child{
+        font-size: 13px;
+        font-weight: bold;
+        text-transform: uppercase;    
+    }
+    &:nth-child(3){
+        font-size: 10px;
+    }
+    &:nth-child(4){
+        font-size: 12px;
+        font-weight: bold;    }
+}
+.btn-wrapper{
+    button{
+        width:137.5px;
+    }
+    button:nth-child(1){
+        background: $clr-white;
+        color: $clr-main;
+        outline: none;
+        border: 1px solid $clr-border;
+        padding: 10px;
+        cursor: pointer;
+        margin: 15px;
+        /* margin-left: 15px; */
+        width: 137.5px;
+        &:hover{
+            color: $clr-white;
+            background-color: $clr-main-hover;
+            border-color: $clr-main-hover;
+        }
+    }
+}
+.btn-inner-wrapper{
+    clear: both;
+}
+span.left{
+    float:left;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+span.right{
+    float:right;
+    padding-top: 15px;
+    padding-right: 15px;
+}
+.deleteBtn{
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    &:hover{
+        color:$clr-main-hover;
+    }
+}
+.emptyCart{
+    padding: 15px;
+}
+
+.trave-back{
+    cursor: pointer;
+    display: inline;
+    &:hover{
+        text-decoration: underline;
+    }
 }

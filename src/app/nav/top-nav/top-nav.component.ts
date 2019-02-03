@@ -1,3 +1,4 @@
+// Nav component will be loaded for each child component
 import { Component, OnInit } from '@angular/core';
 import { IMenu } from 'src/app/models/Imenu';
 
@@ -13,10 +14,6 @@ export class TopNavComponent implements OnInit {
       menuName: 'category',
       menuRouter: '/category',
     },
-    // {
-    //   menuName: 'Shopping Cart',
-    //   menuRouter: '/shopping-cart',
-    // },
   ]
 
   constructor() { }

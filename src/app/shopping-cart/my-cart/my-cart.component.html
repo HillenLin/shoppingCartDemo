@@ -1,2 +1,32 @@
 
-<a [routerLink]="['/shopping-cart']">MY CART ({{activeShoppingCart.length}}) </a>
+<a class="exclusive-link" (click)="showShoppingCartPopup()">MY CART ({{activeShoppingCart.length}})</a>
+
+<div (clickOutside)="onClickedOutside($event)" [exclude]="'a.exclusive-link'" class="popupCart emptyCart" *ngIf="isPopupAvailable && !activeShoppingCart.length">
+    Your Cart is Empty
+</div>
+
+<div (clickOutside)="onClickedOutside($event)" [exclude]="'a.exclusive-link'" class="popupCart" *ngIf="isPopupAvailable && activeShoppingCart.length">
+    <ng-container *ngFor="let item of activeShoppingCart; let i = index">
+        <div class="popupCart-wrapper">
+            <img class="small-product-img" [src]="endPoint[item.productId]?.image">
+            <div class="popCart-info-wrapper">
+                <span title="remove" class="deleteBtn" (click)="deleteItem(item.productId, item.quantity)">X</span>
+                <p class="trave-back" [routerLink]="['category/product/', item.productId]">{{endPoint[item.productId]?.title}}</p>
+                <p>X {{item.quantity}}</p>
+                <p>{{endPoint[item.productId]?.price | currency}}</p>
+            </div>
+        </div>
+    </ng-container>
+    
+
+    <div class="btn-wrapper">
+        <div>
+            <span class="left">Total:</span><span class="right">{{totalPrice | currency}}</span>
+        </div>
+
+        <div class="btn-inner-wrapper">
+            <button [routerLink]="['/shopping-cart']">VIEW CART</button>
+            <button class="mainButtonStyle">CHECKOUT</button>
+        </div>
+    </div>
+</div>

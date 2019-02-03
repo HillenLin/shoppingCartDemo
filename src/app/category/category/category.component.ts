@@ -23,14 +23,12 @@ export class CategoryComponent implements OnInit {
     this.httpGetEndPointService$ = this.httpService.GetJSON().subscribe((res:ProductsModel[]) =>{
       this.endPoint = res;
 
+      //contact string to makeup URL path
       for(let i = 0; i < this.endPoint.length; i ++){
         let element = this.endPoint[i]
         element.image = `${imageBasepath}${element.image}`;
         element.id = i;
       }
-      // res.forEach(element => {
-      //   element.image = `${this.imageBasepath}${element.image}`;
-      // });
     },
     (error: any) => { console.error(error) },
     () =>{

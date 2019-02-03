@@ -16,7 +16,11 @@
               <span class="decrement-button" (click)="decreaseQuantity()">-</span>
             </div>
           </div>
-          <button class="mainButtonStyle" (click)=addItemToShoppingCart()>ADD TO CART</button>
+
+          <ng-template #content let-modal>
+              {{product.title}} has been successfully added to your cart.
+          </ng-template>
+          <button class="mainButtonStyle" (click)=addItemToShoppingCart(content)>ADD TO CART</button>
         </div>
       </div>
   </div>

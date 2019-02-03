@@ -23,13 +23,11 @@ export class ShoppingCartService {
 
       // Check if it is a new product and push it to the shopping cart array
       if(res && !this.activeShoppingCart.filter(cart => cart.productId == res.productId).length){
-        console.log('new ele');
         this.activeShoppingCart.push(res);
       }
       //Check if it is a existing product and change its quantity
       else if(res && this.activeShoppingCart.filter(cart => cart.productId == res.productId).length){
         // find the same product by id
-        console.log('old ele');
         if(res.action == "reset"){
           this.activeShoppingCart.filter(cart => cart.productId == res.productId)[0].quantity = res.quantity;
         }else{
@@ -39,11 +37,9 @@ export class ShoppingCartService {
 
       //Check if its quantity equals to 0 and remove it from the array
       if(this.activeShoppingCart.filter(cart => cart.quantity <= 0).length){
-        console.log('equal to 0');
         for (let i = 0; i < this.activeShoppingCart.length; i++) {
           if(this.activeShoppingCart[i].quantity === 0){
             let index = i;
-            console.log(index);
             this.activeShoppingCart.splice(index, 1);
           }
         }   

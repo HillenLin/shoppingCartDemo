@@ -85,7 +85,6 @@ export class MyCartDetailsComponent implements OnInit {
   }
 
   updateShoppingCart(productId:number, event){
-    console.log('value change');
     this.cartProduct = {
       productId: productId,//use index of JSON object as a id value. 
       quantity: Number(event.target.value),

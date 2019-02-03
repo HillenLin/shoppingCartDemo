@@ -13,7 +13,6 @@ article{
     padding-top: 15px;
     padding-bottom: 15px;
     text-align: center;
-    cursor: pointer;
     img{
         position: relative;
         width: 100%;
@@ -33,6 +32,7 @@ a:first-child{
 
 .hover-wrapper{
     position: relative;
+    cursor: pointer;
     a{
         cursor: pointer;
         background-color: $clr-main;
@@ -55,18 +55,25 @@ a:first-child{
     display: block;
     opacity: 0;
 }
-article:hover{
-    .hover-items{
-        opacity: 1;        
-    }
+.hover-wrapper:hover .hover-items{
+    opacity: 1;
 }
 
 .light-text{
     color: $clr-light;
 }
+.banner-wrapper{
+    padding: 0px
+}
 
 .banner-wrapper img{
     width: 100%;
 }
-
+.trave-back{
+    cursor: pointer;
+    display: inline;
+    &:hover{
+        text-decoration: underline;
+    }
+}
 
