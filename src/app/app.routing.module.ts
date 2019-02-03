@@ -4,17 +4,17 @@ import { Routes, RouterModule } from '@angular/router';
 
 const appRoutes: Routes = [
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'category',
+  },
+  {
     path: 'category',
     loadChildren: './category/category.module#CategoryModule'
   },
   {
     path: 'shopping-cart',
     loadChildren: './shopping-cart/shopping-cart.module#ShoppingCartModule'
-  },
-  {
-    path: '',
-    redirectTo: '/category',
-    pathMatch: 'full'  
   }
 ];
 
