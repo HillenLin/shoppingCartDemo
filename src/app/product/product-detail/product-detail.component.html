@@ -18,7 +18,12 @@
           </div>
 
           <ng-template #content let-modal>
-              {{product.title}} has been successfully added to your cart.
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">{{product.title}} has been successfully added to your cart.</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
           </ng-template>
           <button class="mainButtonStyle" (click)=addItemToShoppingCart(content)>ADD TO CART</button>
         </div>
